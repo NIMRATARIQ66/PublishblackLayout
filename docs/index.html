@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackLayout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #womenimg {
+            /* width: 100%; */
+            height: 48vw;
+            width: 48vw;
+        }
+        
+        .searchdiv {
+            display: flex;
+            background-color: #e0dddd;
+            padding: 10px;
+            box-sizing: border-box;
+            position: fixed;
+            width: 100%;
+            column-gap: 5px;
+            flex-wrap: wrap;
+            top: 0;
+            z-index: 78;
+        }
+        
+        .circle {
+            /* display: inline-block; */
+            width: 14px;
+            height: 14px;
+            border-radius: 58px;
+            /* margin-left: 7px; */
+            position: relative;
+            top: 6px;
+        }
+        
+        #circle1 {
+            background-color: red;
+        }
+        
+        #circle2 {
+            background-color: yellow;
+        }
+        
+        #circle3 {
+            background-color: #71c771;
+        }
+        
+        .searchbar {
+            /* justify-content: center; */
+            background-color: white;
+            /* width: 50%; */
+            width: 69vw;
+            height: 23px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+        
+        .searchbar h5#textinbar {
+            font-size: 0.79em;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            top: 2px;
+            color: #bfbebe
+        }
+        
+        #refreshicon {
+            width: 15px;
+            position: relative;
+            top: 4px;
+            opacity: 0.5;
+        }
+        
+        .mynav {
+            background-color: black;
+            display: flex;
+            padding: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+            align-items: center;
+            /* justify-content: center; */
+            /* height: 50px; */
+            background-color: black;
+            position: relative;
+            /* top: 44px; */
+            margin-top: 43px;
+        }
+        
+        .mynav h1.logotext {
+            color: white;
+            margin: 0;
+            position: relative;
+            left: 40px;
+        }
+        
+        .mynav ol {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            color: white;
+            column-gap: 8px;
+        }
+        
+        .mynav ol li {
+            width: 100%;
+            position: relative;
+            /* left: 82px; */
+            line-height: 0.9em;
+            font-weight: bold;
+            font-size: 0.77em;
+        }
+        
+        #searchicon {
+            width: 16px;
+            position: relative;
+            bottom: 1.5px;
+        }
+        
+        .mynav :nth-child(1) {
+            flex-grow: 0.3;
+        }
+        
+        .mynav :nth-child(2) {
+            flex-grow: 0.5;
+        }
+        
+        .mynav li:hover::after {
+            content: " ";
+            border-bottom: 2px solid white;
+            position: absolute;
+            left: 0px;
+            right: 0;
+            height: 17px;
+            width: 17px;
+            cursor: pointer;
+        }
+        
+        .mysection {
+            background-color: #0d0e10;
+            display: flex;
+            padding: 0px 66px;
+            column-gap: 80px;
+            position: relative;
+            font-size: 14px;
+            /* flex-wrap: wrap; */
+        }
+        
+        .divtext {
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 6px;
+            position: relative;
+        }
+        
+        .divtext h1 {
+            color: white;
+            /* width: 93%; */
+            font-size: 7em;
+            margin: 25px 0px;
+            /* font-weight: bold;*/
+        }
+        
+        .divtext button {
+            color: white;
+            border: 2px solid rgb(249 57 88);
+            background-color: black;
+            padding: 13px 35px;
+            position: relative;
+            margin-bottom: 36px;
+        }
+        
+        .divtext h1::before {
+            content: " ";
+            position: absolute;
+            border-top: 2px solid rgb(249 57 88);
+            width: 40px;
+            top: 17px;
+        }
+        
+        .mysection :nth-child(1) {
+            flex-grow: 1;
+        }
+        
+        .mysection :nth-child(2) {
+            flex-grow: 1;
+        }
+        
+        .imgdiv {
+            position: relative;
+            left: 66px;
+        }
+        /* .divtext {
+            width: 259%;
+        } */
+        
+        .threeblockdiv {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 30px;
+            background-color: black;
+            margin-top: 30px;
+            padding: 20px;
+        }
+        
+        .block {
+            /* width: 22%;
+            height: 220px; */
+            padding: 30px 25px;
+            opacity: 0.5;
+            margin-top: 30px;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            /* display: inline-block;/* display: inline-block; */
+        }
+        
+        #block1 {
+            background-color: rgb(209 57 83);
+            background-image: url(./nature1.jpg);
+        }
+        
+        #block2 {
+            background-color: #191c1c;
+            background-image: url(./nature5.jpg);
+        }
+        
+        #block3 {
+            background-color: #1b1b1b;
+            background-image: url(./nature2.jpg);
+        }
+        
+        .pinkimg {
+            width: 38px;
+        }
+        
+        .block h1 {
+            color: white;
+            font-size: 1.0em;
+            font-weight: 400;
+        }
+        
+        .h1underborder::before {
+            content: " ";
+            border-bottom: 2px solid white;
+            position: absolute;
+            /* left: 0; */
+            /* right: 0; */
+            height: 30px;
+            width: 20px;
+        }
+        
+        .block h5 {
+            color: white;
+            font-size: 0.6em;
+            /* width: 182px; */
+            padding: 20px 0px;
+            font-weight: 300;
+        }
+        
+        footer {
+            background-color: #27282a;
+            height: 25px;
+            position: relative;
+        }
+        
+        #centerpinkline {
+            right: 0;
+            border-left: 2px solid #d13953;
+            width: 30px;
+            height: 27px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            bottom: 0px;
+        }
+        
+        .block:hover {
+            opacity: 1;
+        }
+        
+        @media screen and (min-width:202px) and (max-width:550px) {
+            .mynav ol {
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width:202px) and (max-width:744px) {
+            .mysection img {
+                display: none;
+            }
+        }
+        
+        @media screen and (max-width:300px) {
+            .searchdiv .icondiv {
+                display: none;
+            }
+            header .searchdiv .circle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="searchdiv">
+            <div class="circle" id="circle1"></div>
+            <div class="circle" id="circle2"></div>
+            <div class="circle" id="circle3"></div>
+            <div class="searchbar">
+                <h5 id="textinbar">Not Secure-gentium.pixerex.com</h5>
+            </div>
+            <div class="icondiv">
+                <img id="refreshicon" src="./refresh.png " alt="refreshicon "></div>
+        </div>
+
+    </header>
+    <!-- <img src="./shahin-khalaji-qTMRoHOHu0U-unsplash.jpg " alt="woman img "> -->
+    <nav class="mynav">
+        <h1 class="logotext">Gentium.</h1>
+        <ol>
+            <li class="pinkborder">Home</li>
+            <li class="pinkborder">Services</li>
+            <li class="pinkborder">Works</li>
+            <li class="pinkborder">About</li>
+            <li class="pinkborder">Client</li>
+            <li class="pinkborder">Blog</li>
+            <li class="pinkborder">Contact</li>
+            <li><img id="searchicon" src="./iconsearch.png" alt="searchicon"></li>
+        </ol>
+
+    </nav>
+    <section class="mysection">
+        <div class="divtext">
+            <h1>We're a digital agency.</h1>
+            <button>Getting Started</button>
+        </div>
+        <div class="imgdiv"><img id="womenimg" src="./shahin-khalaji-qTMRoHOHu0U-unsplash.jpg" alt="women img">
+
+        </div>
+
+    </section>
+    <section class="threeblockdiv">
+
+        <div class="block" id="block1">
+            <img class="pinkimg" src="./pinkimg1new.jpg" alt="pinkimg1">
+            <h1 class="h1underborder">Future Vision.</h1>
+            <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, quam!</h5>
+        </div>
+        <div class="block" id="block2">
+            <img class="pinkimg" src="./pink2.jpg" alt="pinkimg2">
+            <h1 class="h1underborder">Product Design.</h1>
+            <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, quam!</h5>
+        </div>
+        <div class="block" id="block3">
+            <img class="pinkimg" src="./pinkimg3new.jpg" alt="pinkimg3">
+            <h1 class="h1underborder">Inovative Solutions.</h1>
+            <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, quam!</h5>
+        </div>
+
+    </section>
+    <footer>
+        <div id="centerpinkline"></div>
+    </footer>
+</body>
+
+</html>
